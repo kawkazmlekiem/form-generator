@@ -1,7 +1,8 @@
 # FormGenerator
 Prosty generator formularzy z podstawową walidacją
 ## Uruchomienie
-Pobierz wtyczkę i dodaj ją forderu plugins w twoim motywie. Następnie aktywuj wtyczkę z poziomu admina w WordPress<br>
+Pobierz _form-generator.zip_, rozpakuj i dodaj ją forderu plugins w twoim motywie.<br>
+Następnie aktywuj wtyczkę z poziomu admina w WordPress<br>
 ![image](https://github.com/user-attachments/assets/cd80918f-89a4-48dc-b81d-d3d66c4365ca)
 <br>
 ## Jak działa generator w edytorze
