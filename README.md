@@ -2,54 +2,62 @@
 Prosty generator formularzy z podstawową walidacją
 ## Uruchomienie
 Pobierz wtyczkę i dodaj ją forderu plugins w twoim motywie. Następnie aktywuj wtyczkę z poziomu admina w WordPress<br>
-![image](https://github.com/user-attachments/assets/9a0e52a8-c002-4658-8f56-96590d5248d1)<br>
+![image](https://github.com/user-attachments/assets/cd80918f-89a4-48dc-b81d-d3d66c4365ca)
+<br>
 ## Jak działa generator w edytorze
 Po dodaniu wtyczki FormGenerator jest dostępny jako blok w edytorze<br>
-![image](https://github.com/user-attachments/assets/82ebe39c-624c-4eaa-94b4-965b412afc66)<br>
+![image](https://github.com/user-attachments/assets/13eb21ab-30f2-4267-80a2-79aa6f8cfd62)<br>
 Po dodaniu pojawia się blok generatora<br>
-![image](https://github.com/user-attachments/assets/0108e987-5011-4b61-a773-0d346ae05483)<br>
+![image](https://github.com/user-attachments/assets/ea9dc0ac-b1cd-4258-8731-e4d27ca844e2)
+<br>
 Można w nim dodać action dla formularza, oraz pojedyńcze inputy, po dodaniu inputu pojawia się on wyżej, można go usunąć<br>
-![image](https://github.com/user-attachments/assets/ed7a0058-b420-427b-bda7-73f32968585d)<br>
+![image](https://github.com/user-attachments/assets/d68988a1-d6f8-467f-ac3c-6a990005a4be)<br>
 Nie można ddodać pustego inputu, pojawia się error<br>
-![image](https://github.com/user-attachments/assets/0667ef41-8d04-435e-8ffa-06ccf0d88e1b)<br>
+![image](https://github.com/user-attachments/assets/e987c1b4-d6fc-476e-8b9f-76558c75efbb)<br>
 ## Jak działa formularz na stronie
 Do strony zostaje dodany prosty formularz<br>
-![image](https://github.com/user-attachments/assets/8ac06a60-0e23-4132-828f-8592da6637c0)<br>
+![image](https://github.com/user-attachments/assets/1a960440-8a7b-472b-bf63-a39d5a4624ef)<br>
 Po wysyłce pod nim pojawia się wiadomość, czy dane zostały przesłane do endpointu<br>
 Error<br>
-![image](https://github.com/user-attachments/assets/5dfba851-9433-4c88-b53a-a9556296855e)<br>
+![image](https://github.com/user-attachments/assets/7a206103-4e4d-4d42-81d0-08e4396f76ef)
+<br>
 Poprawne dane<br>
-![image](https://github.com/user-attachments/assets/34a73a97-d5f3-4f94-8cc4-29b849e8e3aa)
+![image](https://github.com/user-attachments/assets/8e17f182-1cdd-4133-ab1c-8a94afd99bb6)
 ## Blok generatora
 Blok został stworzony przy wykorzystaniu Komponentów WordPressa
 ## Generowanie formularza
 Formularz jest generowany po stronie PHP, w pliku _render.php_.
 Do dynamicznego tworzenia inputów wykorzystałam wzorzez projektowy Builder, najbardziej odpowiada temu co chcę osiągnąć, w przyszłości rozbudowa kodu będzie łatwiejsza
 Renderowanie odbywa się w funkcji _fg_form_generator_render()_<br>
-![image](https://github.com/user-attachments/assets/d27f3167-50cc-42b6-80eb-af6bb62f57a7)<br>
+![image](https://github.com/user-attachments/assets/f12f9f9a-53e6-4060-a055-a1be8d6abbb9)
+<br>
 Pobieran zapisane i stworzone inputy z atrybutów bloku, następnie za pomocą pętli buduję je przygotowaną mechaniką
 ### InputBuilder
 Przyjmuje przesłane dane, po czym buduje z nich input. Obecnie rozróżniam typ textarea i input, w przyszłości można zozbudować builder o kilka funkcji build(), na przykład dla typu select, żeby to zrobić należy rozbudować również blok generatora<br>
-![image](https://github.com/user-attachments/assets/db53a1f2-2da0-4b08-8e65-5f423cac2092)
+![image](https://github.com/user-attachments/assets/0d1aaad5-baaf-4d0f-901f-647c274f3c0e)
 ### Director
 Inputy tworze poprzez Director'a<br>
-![image](https://github.com/user-attachments/assets/9e62af59-a0be-491f-86c3-81f6f611b797)
+![image](https://github.com/user-attachments/assets/4cd32489-3efd-4c2f-8924-0b8ea9cab2f1)
 ## Wysyłka i walidacja formularza
 ### Customowy skrypt do wysyłki formularza
 Do formularza endpoint końcowy jest przekazywany za pomocą action, żeby móc przed wysyłką sprawdzić poprawność pól oraz wyświetlić komunikat, dodałam kod js.
 W handleForm() tworzę obiekt z danymi z formularza, dodaaję również action<br>
-![image](https://github.com/user-attachments/assets/f5fd1718-0b09-4b55-bf65-496c7e0629c6)<br>
+![image](https://github.com/user-attachments/assets/0ae2dad6-f152-46fe-a541-4a05d2394290)
+<br>
 Następnie za pomocą fetch przesyłam dane do pliku validator.php
 Na podstawie odpowiedzi generuję wiadomość, z errorem lub thankYou
 ### Walidacja
 Po dostaniu danych, sprawdzam format w jakim zostały przesłane, oczekuję JSON<br>
-![image](https://github.com/user-attachments/assets/9bafe660-9319-4088-9bfc-e5038e2785ca)<br>
+![image](https://github.com/user-attachments/assets/d755815e-1ddd-4b23-946d-f6fe49573197)
+<br>
 Przygotowałam walidację dla 3 typów inputów, name, email i description<br>
-![image](https://github.com/user-attachments/assets/b588c5ff-121f-4900-9db7-8c07367174e4)<br>
+![image](https://github.com/user-attachments/assets/9dd79939-53e8-4578-8070-7bdd4431eb88)
+<br>
 Po walidacji przesyłam odpowiedź do js<br>
-![image](https://github.com/user-attachments/assets/c3a98417-db9a-4bf4-b9bd-ade7d1d2760d)<br>
+![image](https://github.com/user-attachments/assets/c1188141-ebc3-4fd7-a65d-fba2b3ee17d5)
+<br>
 oraz przesyłam dane dalej, do endpointu<br>
-![image](https://github.com/user-attachments/assets/572c78ad-9eec-4cad-8f5d-314b9a06ac27)
+![image](https://github.com/user-attachments/assets/560fe15b-1e68-4029-9903-9fdf0770569e)
 ## Ideas
 W przyszłości wtyczkę można rozbudować o następne typy inputów oraz dodatkowe elementy.
 ### ACF
