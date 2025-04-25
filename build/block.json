@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "form-generator/form",
+  "title": "Form Generator",
+  "category": "text",
+  "icon": "forms",
+  "description": "Adds a simple form",
+  "keywords": [
+    "form",
+    "generator",
+    "simple"
+  ],
+  "version": "1",
+  "textdomain": "form-generator",
+  "editorScript": "file:./index.js",
+  "attributes": {
+    "content": {
+      "type": "array",
+      "default": []
+    },
+    "actionForm": {
+      "type": "string",
+      "default": ""
+    }
+  }
+}
