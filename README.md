@@ -48,16 +48,16 @@ Następnie za pomocą fetch przesyłam dane do pliku validator.php
 Na podstawie odpowiedzi generuję wiadomość, z errorem lub thankYou
 ### Walidacja
 Po dostaniu danych, sprawdzam format w jakim zostały przesłane, oczekuję JSON<br>
-![image](https://github.com/user-attachments/assets/d755815e-1ddd-4b23-946d-f6fe49573197)
+![image](https://github.com/user-attachments/assets/9ef4f943-ab02-424d-a57f-f061cbb42fed)
 <br>
 Przygotowałam walidację dla 3 typów inputów, name, email i description<br>
-![image](https://github.com/user-attachments/assets/9dd79939-53e8-4578-8070-7bdd4431eb88)
+![image](https://github.com/user-attachments/assets/50903028-4900-466c-ba9e-3fe49f4d7030)
 <br>
 Po walidacji przesyłam odpowiedź do js<br>
-![image](https://github.com/user-attachments/assets/c1188141-ebc3-4fd7-a65d-fba2b3ee17d5)
+![image](https://github.com/user-attachments/assets/82e67107-96d9-45a6-a017-cfd7fa0c7607)
 <br>
 oraz przesyłam dane dalej, do endpointu<br>
-![image](https://github.com/user-attachments/assets/560fe15b-1e68-4029-9903-9fdf0770569e)
+![image](https://github.com/user-attachments/assets/a2c4f6be-2d43-4a0d-978b-bf1302faddcf)
 ## Ideas
 W przyszłości wtyczkę można rozbudować o następne typy inputów oraz dodatkowe elementy.
 ### ACF
