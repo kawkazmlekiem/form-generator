@@ -29,8 +29,12 @@ Blok został stworzony przy wykorzystaniu Komponentów WordPressa
 ## Generowanie formularza
 Formularz jest generowany po stronie PHP, w pliku _render.php_.
 Do dynamicznego tworzenia inputów wykorzystałam wzorzez projektowy Builder, najbardziej odpowiada temu co chcę osiągnąć, w przyszłości rozbudowa kodu będzie łatwiejsza
-Renderowanie odbywa się w funkcji _fg_form_generator_render()_<br>
+Renderowanie odbywa się w funkcji _fg_form_generator_render()_.<br>
+Jako parametr funkcja przyjmuje atrybuty stworzone w edytorze.<br>
 ![image](https://github.com/user-attachments/assets/f12f9f9a-53e6-4060-a055-a1be8d6abbb9)
+<br>
+_fg_form_generator_render()_ jest przekazana jako render_callback podczas rejestrowania bloku, dlatego może się odwoływać do atrybutów<br>
+![image](https://github.com/user-attachments/assets/c4f32693-dd34-4ccb-89e0-2f82aba6d549)
 <br>
 Pobieran zapisane i stworzone inputy z atrybutów bloku, następnie za pomocą pętli buduję je przygotowaną mechaniką
 ### InputBuilder
