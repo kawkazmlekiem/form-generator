@@ -42,6 +42,7 @@ Przyjmuje przesłane dane, po czym buduje z nich input. Obecnie rozróżniam typ
 ![image](https://github.com/user-attachments/assets/0d1aaad5-baaf-4d0f-901f-647c274f3c0e)
 ### Director
 Inputy tworze poprzez Director'a<br>
+Jako parametr oczekuje obiektu InputBuilder, następnie po kolei odwołuje się do jego funkcji by stworzyć _input_ <br>
 ![image](https://github.com/user-attachments/assets/4cd32489-3efd-4c2f-8924-0b8ea9cab2f1)
 ## Wysyłka i walidacja formularza
 ### Customowy skrypt do wysyłki formularza
